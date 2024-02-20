@@ -1,4 +1,5 @@
 pipeline{
+    agent any
     tools{
         nodejs 'node16'
         jdk 'jdk17'
