@@ -4,7 +4,7 @@ pipeline{
         jdk 'jdk17'
     }
     environment{
-        sonar_home=tool sonar_scanner
+        sonar_home=tool sonar-scanner
     }
     stages{
         stage("Clean Workspace"){
