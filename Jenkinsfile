@@ -37,9 +37,12 @@ pipeline{
         }
         stage("Build and push image"){
             steps{
-                sh 'docker build -t 2048Game .'
-                sh 'docker tag 2048Game 2048Game:latest'
-                sh 'docker push 2048Game:latest'
+                withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
+                sh 'docker build -t game .'
+                sh 'docker tag game eswari25/game:latest'
+                sh 'docker push eswari25/game:latest'
+                }
+                
             }
         }
 
